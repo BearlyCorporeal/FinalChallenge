@@ -1,0 +1,21 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Create
+       [dbo].[Customer0136] (Table)
+       [dbo].[Interest0136] (Table)
+       [dbo].[Record0136] (Table)
+       [dbo].[Sale0136] (Table)
+       Foreign Key: unnamed constraint on [dbo].[Customer0136] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[Sale0136] (Foreign Key)
+       Foreign Key: unnamed constraint on [dbo].[Sale0136] (Foreign Key)
+
+** Supporting actions

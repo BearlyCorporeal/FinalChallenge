@@ -1,0 +1,5 @@
+C:\Users\102570136\Documents\GitHub\FinalChallenge\FinalChallenge\FinalChallengeDB\bin\Debug\FinalChallengeDB.dacpac
+C:\Users\102570136\Documents\GitHub\FinalChallenge\FinalChallenge\FinalChallengeDB\bin\Debug\FinalChallengeDB.dll
+C:\Users\102570136\Documents\GitHub\FinalChallenge\FinalChallenge\FinalChallengeDB\bin\Debug\FinalChallengeDB.pdb
+C:\Users\102570136\Documents\GitHub\FinalChallenge\FinalChallenge\FinalChallengeDB\obj\Debug\FinalChallengeDB.dll
+C:\Users\102570136\Documents\GitHub\FinalChallenge\FinalChallenge\FinalChallengeDB\obj\Debug\FinalChallengeDB.pdb

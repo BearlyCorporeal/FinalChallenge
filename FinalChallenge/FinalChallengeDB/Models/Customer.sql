@@ -1,0 +1,12 @@
+﻿CREATE TABLE [dbo].[Customer0136]
+(
+	[CustNo] INT NOT NULL PRIMARY KEY,
+	[CustName] NVARCHAR(50) NOT NULL,
+	[CustAddress] NVARCHAR(50) NOT NULL,
+	[CustPCode] INT NOT NULL,
+	[InterestCode] NVARCHAR(2) NOT NULL,
+	FOREIGN KEY(InterestCode) REFERENCES Interest0136
+
+
+
+)

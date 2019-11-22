@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DADModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Customer0136">
+    <Key>
+      <PropertyRef Name="CustNo" />
+    </Key>
+    <Property Name="CustNo" Type="int" Nullable="false" />
+    <Property Name="CustName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CustAddress" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="CustPCode" Type="int" Nullable="false" />
+    <Property Name="InterestCode" Type="nvarchar" MaxLength="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Interest0136">
+    <Key>
+      <PropertyRef Name="InterestCode" />
+    </Key>
+    <Property Name="InterestCode" Type="nvarchar" MaxLength="2" Nullable="false" />
+    <Property Name="InterestDesc" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Record0136">
+    <Key>
+      <PropertyRef Name="RecordID" />
+    </Key>
+    <Property Name="RecordID" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Preformer" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sale0136">
+    <Key>
+      <PropertyRef Name="CustNo" />
+      <PropertyRef Name="RecordID" />
+      <PropertyRef Name="DateOrdered" />
+      <PropertyRef Name="Price" />
+    </Key>
+    <Property Name="CustNo" Type="int" Nullable="false" />
+    <Property Name="RecordID" Type="nvarchar" MaxLength="5" Nullable="false" />
+    <Property Name="DateOrdered" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Price" Type="money" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__Customer0__Inter__367C1819">
+    <End Role="Interest0136" Type="Self.Interest0136" Multiplicity="1" />
+    <End Role="Customer0136" Type="Self.Customer0136" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Interest0136">
+        <PropertyRef Name="InterestCode" />
+      </Principal>
+      <Dependent Role="Customer0136">
+        <PropertyRef Name="InterestCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Sale0136__CustNo__37703C52">
+    <End Role="Customer0136" Type="Self.Customer0136" Multiplicity="1" />
+    <End Role="Sale0136" Type="Self.Sale0136" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer0136">
+        <PropertyRef Name="CustNo" />
+      </Principal>
+      <Dependent Role="Sale0136">
+        <PropertyRef Name="CustNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Sale0136__Record__3864608B">
+    <End Role="Record0136" Type="Self.Record0136" Multiplicity="1" />
+    <End Role="Sale0136" Type="Self.Sale0136" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Record0136">
+        <PropertyRef Name="RecordID" />
+      </Principal>
+      <Dependent Role="Sale0136">
+        <PropertyRef Name="RecordID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DADModelStoreContainer">
+    <EntitySet Name="Customer0136" EntityType="Self.Customer0136" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Interest0136" EntityType="Self.Interest0136" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Record0136" EntityType="Self.Record0136" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sale0136" EntityType="Self.Sale0136" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Customer0__Inter__367C1819" Association="Self.FK__Customer0__Inter__367C1819">
+      <End Role="Interest0136" EntitySet="Interest0136" />
+      <End Role="Customer0136" EntitySet="Customer0136" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Sale0136__CustNo__37703C52" Association="Self.FK__Sale0136__CustNo__37703C52">
+      <End Role="Customer0136" EntitySet="Customer0136" />
+      <End Role="Sale0136" EntitySet="Sale0136" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Sale0136__Record__3864608B" Association="Self.FK__Sale0136__Record__3864608B">
+      <End Role="Record0136" EntitySet="Record0136" />
+      <End Role="Sale0136" EntitySet="Sale0136" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
